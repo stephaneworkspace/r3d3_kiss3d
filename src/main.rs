@@ -30,13 +30,16 @@ fn main() {
     let mut window = Window::new("Kiss3d: rectangle");
     let mut rect = window.add_rectangle(50.0, 150.0);
     let mut circ = window.add_circle(50.0);
-    circ.append_translation(&Translation2::new(200.0, 0.0));
+    // Translation2 200.0 -> distance from center 300.0 = max ~
+    circ.append_translation(&Translation2::new(50.0, 000.0));
 
     rect.set_color(0.0, 1.0, 0.0);
     circ.set_color(0.0, 0.0, 1.0);
 
+    // Speed rotation
     let rot_rect = UnitComplex::new(0.014);
-    let rot_circ = UnitComplex::new(-0.014);
+    // let rot_circ = UnitComplex::new(-0.014);
+    let rot_circ = UnitComplex::new(-0.101);
 
     while window.render() {
         rect.prepend_to_local_rotation(&rot_rect);
